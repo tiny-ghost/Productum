@@ -3,13 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Productum"
+        xmlns:vm="clr-namespace:Productum.Desktop.UI.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="Productum - Home" Height="600" Width="920"
-        WindowStyle ="None"
-        ResizeMode="NoResize"
-        Background="Transparent"
-        AllowsTransparency="True">
+        Title="{Binding Path=Title}" Height="600" Width="920"
+        ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
 
     <Border
         Background="#272537"
@@ -23,7 +24,7 @@
                 <RowDefinition Height="75"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Productum"
+            <TextBlock Text="{Binding Path=Title, UpdateSourceTrigger=PropertyChanged}"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        Foreground="White"
@@ -33,25 +34,25 @@
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             />
                 <RadioButton Content="Discovery"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             />
                 <RadioButton Content="About"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             />
             </StackPanel>
 
             <TextBox Width="250"
                      Height="40"
+                     Text="{Binding Path=Title, UpdateSourceTrigger=PropertyChanged}"
                      VerticalContentAlignment="Center"
                      HorizontalAlignment="Left"
-                     Grid.Column="1"
-                     Style="{StaticResource ModernTextBox}"/>
+                     Grid.Column="1"/>
         </Grid>
         
     </Border>
