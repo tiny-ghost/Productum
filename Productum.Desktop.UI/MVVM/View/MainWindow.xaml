@@ -13,23 +13,25 @@
     </Window.DataContext>
 
     <Border
-        Background="#272537"
-        CornerRadius="20">
+        Background="#272537">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="75"/>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="48"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Text="{Binding Path=Title, UpdateSourceTrigger=PropertyChanged}"
                        VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="8,0,0,0"
                        Foreground="White"
-                       FontSize="22"/>
-            <StackPanel Grid.Row="1">
+                       Grid.Row="1"
+                       FontSize="16"/>
+            <StackPanel Grid.Row="2">
                 <RadioButton Content="Home"
                              Height="50"
                              Foreground="White"
@@ -46,13 +48,6 @@
                              FontSize="14"
                              />
             </StackPanel>
-
-            <TextBox Width="250"
-                     Height="40"
-                     Text="{Binding Path=Title, UpdateSourceTrigger=PropertyChanged}"
-                     VerticalContentAlignment="Center"
-                     HorizontalAlignment="Left"
-                     Grid.Column="1"/>
         </Grid>
         
     </Border>
